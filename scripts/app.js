@@ -6,8 +6,10 @@ const updateCity = async (city) => {
     const weather = await getWeather(cityDetails.Key);
 
     return {
-        cityDetails: cityDetails,
-        weather: weather,
+        /* object shorthand notation 
+        i.e. we can write it only once if the property & value is same */
+        cityDetails,
+        weather,
     };
 };
 
