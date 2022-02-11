@@ -31,13 +31,7 @@ const updateUI = (data) => {
     icon.setAttribute("src", iconSrc);
 
     // overwrite the img a/c to location time(Day || Night)
-    let timeSrc = null;
-    if (weather.IsDayTime) {
-        timeSrc = "img/day.svg";
-    } else {
-        timeSrc = "img/night.svg";
-    }
-
+    let timeSrc = weather.IsDayTime ? "img/day.svg" : "img/night.svg";
     time.setAttribute("src", timeSrc);
 
     // remove the d-none class if present
@@ -52,7 +46,7 @@ const updateCity = async (city) => {
 
     return {
         /* object shorthand notation
-i.e. we can write it only once if the property & value is same */
+        i.e. we can write it only once if the property & value is same */
         cityDetails,
         weather,
     };
@@ -78,3 +72,4 @@ cityForm.addEventListener("submit", (e) => {
             console.log(err);
         });
 });
+
