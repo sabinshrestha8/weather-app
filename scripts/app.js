@@ -71,5 +71,19 @@ cityForm.addEventListener("submit", (e) => {
         .catch((err) => {
             console.log(err);
         });
+
+    // set local storage
+    localStorage.setItem("city", city);
 });
 
+/* check if city exists in localStorage 
+then make api calls and preview it in the browser */
+if (localStorage.getItem("city")) {
+    updateCity(localStorage.getItem("city"))
+        .then((data) => {
+            updateUI(data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
